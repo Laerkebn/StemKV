@@ -8,7 +8,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>StemMed</title>
     <style>
       html, body {
@@ -20,21 +19,36 @@
 
       img {
         max-width: 100%;
-        height: auto;
         display: block;
       }
     </style>
      <!-- tom plads under logo -->
-  <div class="h-40 w-full bg-white"></div>
+  <div class="h-[200px] w-full bg-white"></div>
   </head>
   <body class="min-h-screen flex flex-col p-5 mb-6 bg-[#F4F3E8] p-5">
-    <img
-      src="/Billeder/logo.webp"
-      alt="Logo"
-      class="absolute top-0 left-0 w-40 m-3 z-50 object-contain"
-    />
-   
+   <img
+  src="/Billeder/logo.svg"
+  alt="Logo"
+  class="absolute pt-5 top-0 left-1/2 -translate-x-1/2 object-contain"
+/>
+  <!-- footer -->
+ <div class="fixed bottom-0 w-full h-[150px] bg-white"></div>
+<img
+  src="/Billeder/danske_regioner.svg"
+  alt="Logo"
+  class="fixed h-[100px] pt-5 bottom-10 left-1/2 -translate-x-1/2 h-12 object-contain"
+/>
+<img
+  src="/Billeder/indenrigs_og_sundhedsministeriet.svg"
+  alt="Logo"
+  class="fixed h-[100px] pt-5 bottom-10 left-1/2 -translate-x-[-200px] h-12 object-contain"
+/>
+<img
+  src="/Billeder/kl.svg"
+  alt="Logo"
+  class="fixed h-[100px] pt-5 bottom-10 left-1/2 -translate-x-[350px] h-12 object-contain"
+/>
     <slot />
   </body>
 </html>
-  
+ 
