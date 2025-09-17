@@ -14,7 +14,6 @@
         margin: 0;
         padding: 0;
         max-width: 100%;
-        overflow-x: hidden;
       }
 
       img {
@@ -23,30 +22,29 @@
       }
     </style>
      <!-- tom plads under logo -->
-  <div class="h-[200px] w-full bg-white"></div>
-  </head>
-  <body class="min-h-screen flex flex-col p-5 mb-6 bg-[#F4F3E8] p-5">
-   <img
-  src="/Billeder/logo.svg"
-  alt="Logo"
-  class="absolute pt-5 top-0 left-1/2 -translate-x-1/2 object-contain"
-/>
+<div class="h-[150px] w-full bg-white flex items-center justify-center">
+  <img
+    src="/Billeder/logo.svg"
+    alt="Logo"
+    class="h-24 object-contain"
+  />
+</div>
   <!-- footer -->
  <div class="fixed bottom-0 w-full h-[150px] bg-white"></div>
 <img
-  src="/Billeder/danske_regioner.svg"
+  src="/Billeder/danskeregioner.svg"
   alt="Logo"
   class="fixed h-[100px] pt-5 bottom-10 left-1/2 -translate-x-1/2 h-12 object-contain"
 />
 <img
-  src="/Billeder/indenrigs_og_sundhedsministeriet.svg"
+  src="/Billeder/indenrigs.svg"
   alt="Logo"
   class="fixed h-[100px] pt-5 bottom-10 left-1/2 -translate-x-[-200px] h-12 object-contain"
 />
 <img
   src="/Billeder/kl.svg"
   alt="Logo"
-  class="fixed h-[100px] pt-5 bottom-10 left-1/2 -translate-x-[350px] h-12 object-contain"
+  class="fixed h-[100px] pt-5 bottom-10 left-1/2 -translate-x-[350px] object-contain"
 />
     <slot />
   </body>
