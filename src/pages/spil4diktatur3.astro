@@ -2,7 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout bgColor="bg-[#2f2f2f]" 
+<Layout bgColor="bg-[#000000]" 
+headerColor="bg-[#000000]" 
+  footerColor="bg-[#000000]"
   headerLogo="/Billeder/stemmedMørke.svg"
   footerLogos={[
     { src: "/Billeder/danske_regionerMørk.svg", alt: "danske_regionerMørk" },
@@ -34,10 +36,17 @@ import Layout from "../layouts/Layout.astro";
             >
             <a
               href="/spil4diktaturSlut"
-              class="py-5 rounded-lg p-5 hover:bg-[#660000] text-[#660000] text-center text-l sm:text-1xl md:text-2xl transform translate-x-[100px] translate-y-[400px]"
+              class="rounded-lg p-3 hover:bg-[#660000] text-[#660000] text-center text-l sm:text-1xl md:text-2xl transform translate-x-[100px] translate-y-[400px]"
               >Nej...</a
             >
         </div>
+
+        <img
+            src="/Billeder/Glitch.gif"
+            alt="sEldre kvinde med cigar"
+            class="w-full h-auto flex rounded-lg"
+          />
+          
         </div>
       </div>
     </div>
