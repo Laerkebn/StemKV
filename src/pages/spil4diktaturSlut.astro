@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout bgColor="bg-[#0000A4]" 
+  headerColor="bg-[#0000A4]" 
+  footerColor="bg-[#0000A4]"
+  headerLogo="/Billeder/tom.svg"
+  footerLogos={[
+    { src: "/Billeder/tom.svg", alt: "logo" },
+    { src: "/Billeder/tom.svg", alt: "logo" },
+    { src: "/Billeder/tom.svg", alt: "logo" }
+  ]}
+>
+  <div class="justify-center flex w-full">
+    <div class="w-full max-w-5xl p-5">
+       <!-- tekst fra venstre -->
+     
+      <div class="flex rounded-lg justify-center pt-10">
+    
+      <div
+        class="p-5 w-full flex-col rounded-lg"
+      >
+        <!-- tekst og knapper -->
+        <div class="text-left">
+           <h1 class="font-coral flex font-bold text-[#FFFFFF] text-3xl sm:text-4xl p-5 pb-5 text-left">
+  Din enhed stødte på et problem og skal genstartes. Vi indsamler nogle fejloplysninger, og så genstarter vi for dig.
+        20 % fuldført
+      </h1>
+       <h1 class="font-coral flex font-bold text-[#FFFFFF] text-3xl sm:text-4xl p-5 pb-5 text-left">
+   20 % fuldført
+      </h1>
+
+          <div
+        class="font-coral flex justify-center px-5 mb-5 space-x-7">
+            <a
+              href="/spil2tid2"
+              class="py-5 p-5 font-bold hover:text-[#660000] text-[#FFFFFF] text-center text-3xl sm:text-4xl p-5 pb-5 text-left"
+              >Ok</a
+            >
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

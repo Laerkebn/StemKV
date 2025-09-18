@@ -1,5 +1,16 @@
 ---
-
+const {
+  bgColor = "bg-[#F4F3E8]",       // Main baggrund
+  headerColor = "bg-white",       // Header baggrund
+  footerColor = "bg-white",       // Footer baggrund
+  headerLogo = "/Billeder/logo.svg", // Standard header-logo
+  footerLogos = [
+    { src: "/Billeder/regioner.svg", alt: "Regioner" },
+    { src: "/Billeder/indenrigs.svg", alt: "Indenrigs" },
+    { src: "/Billeder/kl.svg", alt: "KL" }
+  ]
+} = Astro.props;
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -25,25 +36,24 @@
   <body class="flex flex-col min-h-screen">
 
     <!-- Top-logo -->
-    <header class="h-[150px] w-full bg-white flex items-center justify-center">
-      <a href="/">
-      <img src="/Billeder/logo.svg" alt="Logo" class="h-24 object-contain" />
-      </a>
-    </header>
+   <header class={`h-[150px] w-full flex items-center justify-center ${headerColor}`}>
+  <a href="/">
+    <img src={headerLogo} alt="Logo" class="h-24 object-contain" />
+  </a>
+</header>
 
-    <!-- Main content med baggrund -->
-  <main class="flex-1 bg-[#F4F3E8]">
-    <slot />
-  </main>
+   <!-- Main med dynamisk farve -->
+    <main class={`flex-1 ${bgColor}`}>
+      <slot />
+    </main>
 
-    <!-- Footer med billeder -->
-    <footer class="w-full h-[150px] bg-white flex items-center justify-center">
-      <div class="flex space-x-40">
-        <img src="/Billeder/regioner.svg" alt="Regioner" class="h-12 object-contain" />
-        <img src="/Billeder/indenrigs.svg" alt="Indenrigs" class="h-12 object-contain" />
-        <img src="/Billeder/kl.svg" alt="KL" class="h-12 object-contain" />
-      </div>
-    </footer>
+    <footer class={`w-full h-[150px] flex items-center justify-center ${footerColor}`}>
+  <div class="flex space-x-40">
+    {footerLogos.map((logo) => (
+      <img src={logo.src} alt={logo.alt} class="h-12 object-contain" />
+    ))}
+  </div>
+</footer>
 
   </body>
 </html>

@@ -2,41 +2,43 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-  <div class="bg-[#040e31] justify-center flex w-full">
+<Layout bgColor="bg-[#2f2f2f]" 
+  headerLogo="/Billeder/stemmedMørke.svg"
+  footerLogos={[
+    { src: "/Billeder/danske_regionerMørk.svg", alt: "danske_regionerMørk" },
+    { src: "/Billeder/indenrigsMørk.svg", alt: "logo indenrigsMørk" },
+    { src: "/Billeder/klMørk.svg", alt: "logo klMørk" }
+  ]}
+>
+  <div class="justify-center flex w-full">
     <div class="w-full max-w-5xl p-5">
        <!-- tekst fra venstre -->
      
       <div class="flex rounded-lg justify-center pt-10">
     
       <div
-        class="bg-[#040e31] p-5 w-full flex-col rounded-lg"
+        class="p-5 w-full flex-col rounded-lg"
       >
         <!-- tekst og knapper -->
         <div class="text-left">
-           <h1 class="flex font-bold text-3xl sm:text-4xl p-5 pb-5 text-left">
+           <h1 class="flex font-bold text-[#660000] text-3xl sm:text-4xl p-5 pb-5 text-left">
       Måske du klikkede forkert?
       </h1>
 
           <div
         class="flex justify-center px-5 mb-5 space-x-7">
             <a
-              href="/spil4diktatur2"
-              class="py-5 bg-stone-50 rounded-lg shadow-xl p-5 font-bold hover:bg-[#F4F3E8] text-center text-xl sm:text-2xl md:text-3xl"
-              >Ja...</a
+              href="/spil2tid2"
+              class="py-5 bg-stone-700 rounded-lg shadow-xl p-5 font-bold hover:bg-[#660000] text-[#660000] text-center text-2xl sm:text-3xl md:text-5xl translate-x-1/2"
+              >Ja.</a
             >
             <a
-              href="/spil2tid2"
-              class="py-5 bg-stone-50 rounded-lg shadow-xl p-5 font-bold hover:bg-[#F4F3E8] text-center text-xl sm:text-2xl md:text-3xl"
+              href="/spil4diktaturSlut"
+              class="py-5  rounded-lg p-5 hover:bg-[#660000] text-[#660000] text-center text-l sm:text-1xl md:text-2xl transform translate-x-[300px] translate-y-[400px]"
               >Nej...</a
             >
         </div>
 
-        <img
-            src="/Billeder/diktator2.gif"
-            alt="sEldre kvinde med cigar"
-            class="w-full h-auto flex rounded-lg"
-          />
         </div>
       </div>
     </div>
