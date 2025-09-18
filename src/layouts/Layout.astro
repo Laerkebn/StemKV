@@ -22,7 +22,7 @@
       }
      </style>
   </head>
-  <body class="flex flex-col min-h-screen bg-[#F4F3E8]">
+  <body class="flex flex-col min-h-screen">
 
     <!-- Top-logo -->
     <header class="h-[150px] w-full bg-white flex items-center justify-center">
@@ -31,14 +31,14 @@
       </a>
     </header>
 
-    <!-- Main content fylder al ledig plads -->
-    <main class="flex-1">
-      <slot />
-    </main>
+    <!-- Main content med baggrund -->
+  <main class="flex-1 bg-[#F4F3E8]">
+    <slot />
+  </main>
 
     <!-- Footer med billeder -->
     <footer class="w-full h-[150px] bg-white flex items-center justify-center">
-      <div class="flex space-x-10">
+      <div class="flex space-x-40">
         <img src="/Billeder/regioner.svg" alt="Regioner" class="h-12 object-contain" />
         <img src="/Billeder/indenrigs.svg" alt="Indenrigs" class="h-12 object-contain" />
         <img src="/Billeder/kl.svg" alt="KL" class="h-12 object-contain" />

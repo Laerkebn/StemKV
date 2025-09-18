@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  
   <div class="bg-[#F4F3E8] justify-center flex w-full">
     <div class="w-full max-w-5xl p-5">
        <!-- tekst fra venstre -->
@@ -15,24 +16,23 @@ import Layout from "../layouts/Layout.astro";
         <!-- tekst og knapper -->
         <div class="text-left">
            <h1 class="flex font-bold text-3xl sm:text-4xl p-5 pb-5 text-left">
-        Ønsker du, at vores generation skal være den første uden lokal indflydelse??
+        Ønsker du, at vores generation skal være den første uden lokal indflydelse?
       </h1>
 
           <div
-        class="bg-[#FFFFFF] p-5 w-full flex-col rounded-lg"
-          >
+        class="flex justify-center px-5 mb-5 space-x-7">
             <a
-              href="/spil2tid"
+              href="/spil3voksne"
               class="py-5 bg-stone-50 rounded-lg shadow-xl p-5 font-bold hover:bg-[#F4F3E8] text-center text-xl sm:text-2xl md:text-3xl"
               >Ja!</a
             >
             <a
-              href="/spil2indflydelse"
+              href="/spil2tid"
               class="py-5 bg-stone-50 rounded-lg shadow-xl p-5 font-bold hover:bg-[#F4F3E8] text-center text-xl sm:text-2xl md:text-3xl"
               >Nej</a
             >
         </div>
-        <h2 class="pt-5 px-5 text-xl text-3xl sm:text-4xl p-5 font-bold">
+        <h2 class="pt-5 px-5 text-xl text-3xl sm:text-4xl p-5">
             Inflydelsen er allerede meget ulige; her kan du se stemmefordelingen fra 2021:</h2>
 
         <img
@@ -44,5 +44,4 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </div>
-</Layout>
 </Layout>
