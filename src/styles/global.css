@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'CoralPixels';
+  font-family: 'Jersey10-Regular';
   src: url('/fonts/Jersey10-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
-.font-coral {
-  font-family: 'CoralPixels', sans-serif;
+.font-Jersey10-Regular {
+  font-family: 'Jersey10-Regular', sans-serif;
 }
