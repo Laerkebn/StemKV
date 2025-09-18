@@ -65,12 +65,16 @@ import Layout from "../layouts/Layout.astro";
 
             />
 
+            <!-- Audio -->
+            <audio id="final-audio" src="/lyde/skrig.mp3" preload="auto"></audio>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  
   <script>
     // Liste over elementer, der skal blive sorte / skjulte
     const elementsToDarken = [
@@ -85,6 +89,7 @@ import Layout from "../layouts/Layout.astro";
 
     const okBtn = document.getElementById('ok-btn');
     const finalGif = document.getElementById('final-gif');
+    const finalAudio = document.getElementById('final-audio');
     let index = 0;
 
     okBtn.addEventListener('click', (e) => {
@@ -93,21 +98,28 @@ import Layout from "../layouts/Layout.astro";
       if (index < elementsToDarken.length) {
         const el = elementsToDarken[index];
 
-        if (!el) return; // sikkerhed: skip hvis element ikke findes
+        if (!el) return; // sikkerhed
 
         if(el.tagName === 'IMG' || el.tagName === 'H1') {
-          el.classList.add('hidden'); // skjul billeder og H1
+          el.classList.add('hidden'); // skjul billeder
         } else {
           el.style.backgroundColor = 'black';
           el.style.color = 'white'; // ændrer tekstfarve hvis relevant
         }
 
-        index++;
+       index++;
       } else {
-        // Når alle elementer er sorte / skjulte, vis GIF
+        // Vis GIF og afspil lyd
         finalGif.classList.remove('hidden');
+        const finalAudio = document.getElementById('final-audio') as HTMLAudioElement;
+        finalAudio.currentTime = 1,5;
+        finalAudio.play();
       }
     });
+
+    elementsToDarken.forEach(el => {
+  if (!el) return;
+});
   </script>
 
 </Layout>
