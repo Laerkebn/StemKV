@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout bgColor="bg-[#0000A4]" 
+<Layout 
+  bgColor="bg-[#0000A4]" 
   headerColor="bg-[#0000A4]" 
   footerColor="bg-[#0000A4]"
   headerLogo="/Billeder/tom.svg"
@@ -14,42 +15,99 @@ import Layout from "../layouts/Layout.astro";
 >
   <div class="justify-center flex w-full">
     <div class="w-full max-w-5xl p-5">
-       <!-- tekst fra venstre -->
-     
+
       <div class="flex rounded-lg justify-center pt-10">
-    
-      <div
-        class="p-5 w-full flex-col rounded-lg"
-      >
-        <!-- tekst og knapper -->
-        <div class="text-left font-Jersey15-Regular">
-           <h1 class="font-Jersey10-Regular flex font-bold text-[#FFFFFF] text-3xl sm:text-4xl p-5 pb-5 text-left">
-  Din enhed stødte på et problem og skal genstartes. Vi indsamler nogle fejloplysninger, og så genstarter vi for dig.
-      </h1>
 
-          <div
-        class="font-Jersey10-Regular flex justify-center px-5 mb-5 space-x-7">
-            <a
-              href="/spil2tid2"
-              class="font-Jersey10-Regular py-5 font-bold hover:text-[#660000] text-[#FFFFFF] text-center text-3xl sm:text-4xl p-5 pb-5 text-left"
-              >Ok </a
+        <div id="main-container" class="p-5 w-full flex-col rounded-lg">
+
+          <div class="text-left font-Jersey15-Regular">
+
+            <!-- Første tekst -->
+            <h1 
+              id="main-text"
+              class="font-Jersey10-Regular flex font-bold text-[#FFFFFF] text-3xl sm:text-4xl p-5 pb-5 text-left"
             >
-        </div>
+              Din enhed stødte på et problem og skal genstartes. Vi indsamler nogle fejloplysninger, og så genstarter vi for dig.
+            </h1>
 
-        
+            <!-- Ok-knap -->
+            <div class="flex justify-center px-5 mb-5 space-x-7">
+              <a
+                href="#"
+                id="ok-btn"
+             class="font-Jersey10-Regular py-5 font-bold hover:text-[#660000] text-[#FFFFFF] text-center text-3xl sm:text-4xl p-5 pb-5 text-left"
+               style="box-shadow: 0 0 10px #0f172a;" >
+                Ok
+              </a>
+            </div>
 
-        <h1 class="font-Jersey10-Regular flex font-bold text-[#FFFFFF] text-3xl sm:text-4xl p-5 pb-5 text-left">
-   20 % fuldført
-      </h1>
-      
-         <img
-            src="/Billeder/grass.svg"
-            alt="qrkode"
-            class="w-[300px] h-auto flex rounded-lg"
-          />
+            <!-- Ekstra tekst -->
+            <h1 
+              id="extra-text"
+              class="font-Jersey10-Regular flex font-bold text-[#FFFFFF] text-3xl sm:text-4xl p-5 pb-5 text-left"
+            >
+              20 % fuldført
+            </h1>
 
+            <!-- Billede -->
+            <img
+              id="grass-img"
+              src="/Billeder/grass.svg"
+              alt="qrkode"
+              class="w-[300px] h-auto flex rounded-lg"
+            />
+
+            <!-- GIF (skjult til starten) -->
+            <img 
+              id="final-gif" 
+              src="/Billeder/jump.gif" 
+               class="hidden fixed top-0 left-0 w-full h-full object-cover z-50"
+
+            />
+
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    // Liste over elementer, der skal blive sorte / skjulte
+    const elementsToDarken = [
+      document.querySelector('main'),       // baggrund
+      document.querySelector('header'),     // header
+      document.querySelector('footer'),     // footer
+      document.getElementById('main-container'), 
+      document.getElementById('main-text'),
+      document.getElementById('extra-text'),
+      document.getElementById('grass-img')
+    ];
+
+    const okBtn = document.getElementById('ok-btn');
+    const finalGif = document.getElementById('final-gif');
+    let index = 0;
+
+    okBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (index < elementsToDarken.length) {
+        const el = elementsToDarken[index];
+
+        if (!el) return; // sikkerhed: skip hvis element ikke findes
+
+        if(el.tagName === 'IMG' || el.tagName === 'H1') {
+          el.classList.add('hidden'); // skjul billeder og H1
+        } else {
+          el.style.backgroundColor = 'black';
+          el.style.color = 'white'; // ændrer tekstfarve hvis relevant
+        }
+
+        index++;
+      } else {
+        // Når alle elementer er sorte / skjulte, vis GIF
+        finalGif.classList.remove('hidden');
+      }
+    });
+  </script>
+
 </Layout>
